@@ -1,4 +1,5 @@
 #include "ClassRoom.h"
+#include "Student.h"
 #include <string>
 #include <iomanip>
 #include <iostream>
@@ -11,7 +12,7 @@ ClassRoom::ClassRoom()		//Default Constructor for ClassRoom Objects
 {
 	name = "CSC-134";
 	numStudents = 0;
-	studentArray = new student[23];		//replace student with name for student object
+	studentArray = new Student[23];
 }
 
 ClassRoom::~ClassRoom()		//Destructor for ClassRoom Objects
@@ -33,6 +34,7 @@ void ClassRoom::readDataFromFile(string filename)		//Reads file data and creates
 		{
 			getline(studentData, currentLine, '\n');
             stringstream ss(currentLine);
+            Student studentObj;
 
             for (int x = 0; x < 7; x++) // there are total 7 items in one line
             {
@@ -41,33 +43,35 @@ void ClassRoom::readDataFromFile(string filename)		//Reads file data and creates
                 {
                 case 0:       // 0 index is student last name
                     ss >> lastName;
-                    cout << lastName << " ";
+                    studentObj.setLastName(lastName);
                     break;
                 case 1:       // 1 index is student first name
                     ss >> firstName;
-                    cout << firstName << " ";
+                    studentObj.setFirstName(firstName);
                     break;
                 case 2:       // 2 index is student social security number
                     ss >> socialSec;
-                    cout << socialSec << " ";
+                    studentObj.setSocialSecurityNumber(socialSec);
                     break;
                 case 3:       // 3 index if grade 1
                     ss >> grade1;
-                    cout << grade1 << " ";
+                    studentObj.setExamGrade(grade1, 0);
                     break;
                 case 4:       // 4 index if grade 2
                     ss >> grade2;
-                    cout << grade2 << " ";
+                    studentObj.setExamGrade(grade2, 1);
                     break;
                 case 5:        // 5 index if grade 3
                     ss >> grade3;
-                    cout << grade3 << " ";
+                    studentObj.setExamGrade(grade3, 2);
                     break;
                 case 6:        // 6 index if grade 4
                     ss >> grade4;
-                    cout << grade4 << " " << endl;
+                    studentObj.setExamGrade(grade4, 3);
                     break;
                 }
+                //studentObj.print();
+                //studentArray[numStudents] = studentObj;
                 numStudents++;
             }
 		}
@@ -75,27 +79,4 @@ void ClassRoom::readDataFromFile(string filename)		//Reads file data and creates
 	}
 }
 
-void ClassRoom::sortOnAverage()     //Sorts student array by average grade from highest to lowest
-{
 
-}
-
-void ClassRoom::sortOnLastName()        //Sorts student array alphabetically by last name
-{
-
-}
-
-void ClassRoom::print()     //Prints results of functions
-{
-
-}
-
-double ClassRoom::getClassAverage()     //Gets the average of entire class
-{
-
-}
-
-int ClassRoom::getStudentCount()        //Gets the count of student objects currently created
-{
-
-}
