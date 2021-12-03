@@ -3,6 +3,18 @@
 
 using namespace std;
 
+Student::Student()
+{
+	FirstName = "NULL";
+	LastName = "NULL";
+	SocialSecurityNumber = "NULL";
+	ExamGrades[0] = 0;
+	ExamGrades[1] = 0;
+	ExamGrades[2] = 0;
+	ExamGrades[3] = 0;
+	AverageExamGrade = 0;
+}
+
 string Student::getFirstName()
 {
 	return FirstName;
@@ -50,6 +62,7 @@ void Student::setExamGrades(double firstGrade, double secondGrade, double thirdG
 	ExamGrades[2] = thirdGrade;
 	ExamGrades[3] = fourthGrade;
 }
+
 
 double Student::getAverageExamGrade()
 {
