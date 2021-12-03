@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "Student.h"
 
 using namespace std;
 
@@ -17,6 +18,6 @@ public:
 private:
 	string name;
 	int numStudents;
-	student* studentArray; //replace student with name for student object
+	Student* studentArray; 
 };
 
