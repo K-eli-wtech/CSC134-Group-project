@@ -3,26 +3,26 @@
 
 class Student
 {
-private:
-	string FirstName;
-	string LastName;
-	string SocialSecurityNumber;
-	double ExamGrades[4];
-	double AverageExamGrade;
-	static int StudentNumber;
 public:
-	string getFirstName();
-	void setFirstName(string firstName);
-	string getLastName();
-	void setLastName(string lastName);
-	string getSocialSecurityNumber();
-	void setSocialSecurityNumber(string socialSecurityNumber);
+	std::string getFirstName();
+	void setFirstName(std::string firstName);
+	std::string getLastName();
+	void setLastName(std::string lastName);
+	std::string getSocialSecurityNumber();
+	void setSocialSecurityNumber(std::string socialSecurityNumber);
 	double getExamGrade(int index);
-	double setExamGrade(double examGrade, int index);
+	void setExamGrade(double examGrade, int index);
 	void setExamGrades(double firstGrade, double secondGrade, double thirdGrade, double fourthGrade);
 	double getAverageExamGrade();
 	void setAverageExamGrade(double averageExamGrade);
 	int getStudentNumber();
 	double calculateAverageExamGrade();
 	void print();
+private:
+	std::string FirstName;
+	std::string LastName;
+	std::string SocialSecurityNumber;
+	double ExamGrades[4];
+	double AverageExamGrade;
+	static int StudentNumber;
 };
