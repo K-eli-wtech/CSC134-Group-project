@@ -70,10 +70,11 @@ void ClassRoom::readDataFromFile(string filename)		//Reads file data and creates
                     studentObj.setExamGrade(grade4, 3);
                     break;
                 }
-                //studentObj.print();
-                //studentArray[numStudents] = studentObj;
-                numStudents++;
+
             }
+            studentArray[numStudents] = studentObj;
+            studentObj.print();
+            numStudents++;
 		}
         studentData.close();
 	}
