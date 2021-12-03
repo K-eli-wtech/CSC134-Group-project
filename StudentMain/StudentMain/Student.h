@@ -18,11 +18,12 @@ public:
 	int getStudentNumber();
 	double calculateAverageExamGrade();
 	void print();
+	Student();
 private:
 	std::string FirstName;
 	std::string LastName;
 	std::string SocialSecurityNumber;
 	double ExamGrades[4];
 	double AverageExamGrade;
-	static int StudentNumber;
+	int StudentNumber;
 };
