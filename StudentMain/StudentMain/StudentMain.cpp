@@ -2,8 +2,6 @@
 #include <string>
 #include "ClassRoom.h"
 #include "Student.h"
-#include "ClassRoom.cpp"
-#include "Student.cpp"
 
 using namespace std;
 
