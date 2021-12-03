@@ -1,7 +1,9 @@
 #include <iostream>
+#include <string>
 #include "ClassRoom.h"
 #include "Student.h"
-#include <string>
+#include "ClassRoom.cpp"
+#include "Student.cpp"
 
 using namespace std;
 
@@ -25,7 +27,7 @@ int main()
     classRoomObject.sortOnLastName();
 
     // Display the list of students by student last name
-    cout << "Students by Student Last Name" << end;
+    cout << "Students by Student Last Name" << endl;
     classRoomObject.print();
 
     // Use the ClassRoom Object to display the average grade of all students
