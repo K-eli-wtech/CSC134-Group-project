@@ -3,16 +3,14 @@
 
 using namespace std;
 
-Student::Student()
+int Student::StudentNumber = 0;
+
+Student::Student(string firstName, string lastName, string socialSecurityNumber, double firstGrade, double secondGrade, double thirdGrade, double fourthGrade) : FirstName(firstName), LastName(lastName)
 {
-	FirstName = "NULL";
-	LastName = "NULL";
-	SocialSecurityNumber = "NULL";
-	ExamGrades[0] = 0;
-	ExamGrades[1] = 0;
-	ExamGrades[2] = 0;
-	ExamGrades[3] = 0;
-	AverageExamGrade = 0;
+	setSocialSecurityNumber(socialSecurityNumber);
+	setExamGrades(firstGrade, secondGrade, thirdGrade, fourthGrade);
+	setAverageExamGrade(calculateAverageExamGrade());
+	StudentNumber++;
 }
 
 string Student::getFirstName()
@@ -20,19 +18,9 @@ string Student::getFirstName()
 	return FirstName;
 }
 
-void Student::setFirstName(string firstName)
-{
-	FirstName = firstName;
-}
-
 string Student::getLastName()
 {
 	return LastName;
-}
-
-void Student::setLastName(string lastName)
-{
-	LastName = lastName;
 }
 
 string Student::getSocialSecurityNumber()
