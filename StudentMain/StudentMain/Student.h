@@ -21,14 +21,16 @@ using namespace std;
 // Description: Contains information about a single student and can display that information
 // 
 // Data Members:
+//  StudentNumber
 //  FirstName
 //  LastName
 //  SocialSecurityNumber
 //  ExamGrades
 //  AverageExamGrade
-//  StudentNumber
 // 
 // Member Functions:
+//  Student (2)
+//  ~Student
 //  getFirstName
 //  setFirstName
 //  getLastName
@@ -43,15 +45,15 @@ using namespace std;
 //  calculateAverageExamGrade
 //  getStudentNumber
 //  print
-//  Student (2)
-//  ~Student
 //
 //////////
 
 class Student
 {
 public:
-	static int StudentNumber;
+	Student();
+	Student(string firstName, string lastName, string socialSecurityNumber, double firstGrade, double secondGrade, double thirdGrade, double fourthGrade);
+	~Student();
 	string getFirstName();
 	void setFirstName(string firstName);
 	string getLastName();
@@ -63,13 +65,11 @@ public:
 	void setExamGrades(double firstGrade, double secondGrade, double thirdGrade, double fourthGrade);
 	double getAverageExamGrade();
 	void setAverageExamGrade(double averageExamGrade);
-	int getStudentNumber();
 	double calculateAverageExamGrade();
+	int getStudentNumber();
 	void print();
-	Student();
-	~Student();
-	Student(string firstName, string lastName, string socialSecurityNumber, double firstGrade, double secondGrade, double thirdGrade, double fourthGrade);
 private:
+	static int StudentNumber;
 	string FirstName;
 	string LastName;
 	string SocialSecurityNumber;
