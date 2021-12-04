@@ -65,7 +65,7 @@ Student::Student(string firstName, string lastName, string socialSecurityNumber,
 //
 // Function: ~Student
 // 
-// Description: Deconstructor, decrements StudentNumber
+// Description: Destructor, decrements StudentNumber
 //
 //////////
 
