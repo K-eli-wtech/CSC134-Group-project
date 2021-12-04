@@ -5,6 +5,14 @@ using namespace std;
 
 int Student::StudentNumber = 0;
 
+Student::Student() : FirstName(""), LastName("")
+{
+	setSocialSecurityNumber("");
+	setExamGrades(0, 0, 0, 0);
+	setAverageExamGrade(calculateAverageExamGrade());
+	StudentNumber++;
+}
+
 Student::Student(string firstName, string lastName, string socialSecurityNumber, double firstGrade, double secondGrade, double thirdGrade, double fourthGrade) : FirstName(firstName), LastName(lastName)
 {
 	setSocialSecurityNumber(socialSecurityNumber);
