@@ -7,17 +7,16 @@ using namespace std;
 class ClassRoom
 {
 public:
-	ClassRoom(); //Constructor
-	~ClassRoom(); //Destructor
-	void readDataFromFile(string filename);
-	void sortOnAverage();
-	void sortOnLastName();
-	void print();
-	double getClassAverage();
-	int getStudentCount();
+	ClassRoom();		//Constructor
+	~ClassRoom();		//Destructor
+	void readDataFromFile(string filename);		//Reads file data
+	void sortOnAverage();		//Sorts student ar by average grade
+	void sortOnLastName();		//Sorts student array by C-String value of last name
+	void print();		//Prints data
+	double getClassAverage();		//Gets total class average
+	int getStudentCount();		//Grabs total count of students
 private:
 	string name;
-	int numStudents;
-	Student* studentArray; 
+	Student *studentArray; 
+	static int numStudents;
 };
-
