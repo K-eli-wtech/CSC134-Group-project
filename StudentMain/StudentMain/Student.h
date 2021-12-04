@@ -157,6 +157,8 @@ public:
 
 private:
 	static int StudentNumber;
+	// static variable the stores the number of students
+
 	string FirstName;
 	// variable that stores the student's first name
 
