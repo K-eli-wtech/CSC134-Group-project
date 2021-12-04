@@ -76,7 +76,7 @@ public:
 	//  StudentNumber += 1
 
 	~Student();
-	// Deconstructor
+	// Destructor
 	// Decrements StudentNumber
 	// Postcondition:
 	//  StudentNumber -= 1
