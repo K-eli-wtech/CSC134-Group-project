@@ -5,7 +5,7 @@ using namespace std;
 
 int Student::StudentNumber = 0;
 
-Student::Student() : FirstName(""), LastName("")
+Student::Student()
 {
 	setSocialSecurityNumber("");
 	setExamGrades(0, 0, 0, 0);
@@ -13,8 +13,10 @@ Student::Student() : FirstName(""), LastName("")
 	StudentNumber++;
 }
 
-Student::Student(string firstName, string lastName, string socialSecurityNumber, double firstGrade, double secondGrade, double thirdGrade, double fourthGrade) : FirstName(firstName), LastName(lastName)
+Student::Student(string firstName, string lastName, string socialSecurityNumber, double firstGrade, double secondGrade, double thirdGrade, double fourthGrade)
 {
+	setFirstName(firstName);
+	setLastName(lastName);
 	setSocialSecurityNumber(socialSecurityNumber);
 	setExamGrades(firstGrade, secondGrade, thirdGrade, fourthGrade);
 	setAverageExamGrade(calculateAverageExamGrade());
@@ -26,9 +28,19 @@ string Student::getFirstName()
 	return FirstName;
 }
 
+void Student::setFirstName(string firstName)
+{
+	FirstName = firstName;
+}
+
 string Student::getLastName()
 {
 	return LastName;
+}
+
+void Student::setLastName(string lastName)
+{
+	LastName = lastName;
 }
 
 string Student::getSocialSecurityNumber()
@@ -90,5 +102,5 @@ void Student::print()
 	cout << "Student Name: " << getFirstName() << ' ' << getLastName() << endl;
 	cout << "Social Security Number: " << getSocialSecurityNumber() << endl;
 	cout << "Exam Grades: " << getExamGrade(0) << ", " << getExamGrade(1) << ", " << getExamGrade(2) << ", " << getExamGrade(3) << endl;
-	cout << "Average Exam Grade: " << getAverageExamGrade() << endl;
+	cout << "Average Exam Grade: " << getAverageExamGrade() << '\n' << endl;
 }
