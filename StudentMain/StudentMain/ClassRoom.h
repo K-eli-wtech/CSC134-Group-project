@@ -50,7 +50,7 @@ public:
 	//  StudentArray = new Student[24]
 	
 	~ClassRoom();
-	// Deconstructor
+	// Destructor
 	// deletes StudentArray
 	// Postcondition:
 	//  delete[] StudentArray
