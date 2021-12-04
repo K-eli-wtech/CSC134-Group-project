@@ -37,7 +37,7 @@ int main()
     classRoomObject.sortOnAverage();
 
     // Displays the list of students by student average
-    cout << "Students by Student Average:\n" << endl;
+    cout << "\n\nStudents by Student Average:\n" << endl;
     classRoomObject.print();
     cout << '\n' << "----------------------" << "\n\n" << endl;
 
