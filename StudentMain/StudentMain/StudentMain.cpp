@@ -1,3 +1,14 @@
+
+//////////
+//
+// Filename: StudentMain.cpp
+// Date: December 4, 2021
+// Programmers: Caleb Tutor, Jacob Yates, Kaleb White, Mason Williams
+// 
+// Description: Creates a ClassRoom object, uses the object to read the Student objects from the input file, displays the list of Student objects sorted by AverageExamGrade, displays the list of Student objects sorted by LastName, displays the average grade of all students, and displays the number of Student objects created
+//
+//////////
+
 #include <iostream>
 #include <string>
 #include "ClassRoom.h"
@@ -5,36 +16,44 @@
 
 using namespace std;
 
+//////////
+//
+// Function: main
+// 
+// Description: uses a ClassRoom object to read input, sort, and display output
+//
+//////////
+
 int main()
 {
-    // Create a ClassRoom Object
+    // Creates a ClassRoom Object
     ClassRoom classRoomObject;
 
-    // Use the ClassRoom Object to read the Student Objects from the input file "students.txt"
+    // Uses the ClassRoom Object to read the Student Objects from the input file "students.txt"
     string fileName = "students.txt";
     classRoomObject.readDataFromFile(fileName);
 
-    // Use the ClassRoom Object to sort list of students by student average
+    // Uses the ClassRoom Object to sort list of students by student average
     classRoomObject.sortOnAverage();
 
-    // Display the list of students by student average
-    cout << "Students by Student Average:" << endl;
+    // Displays the list of students by student average
+    cout << "Students by Student Average:\n" << endl;
     classRoomObject.print();
-    cout << '\n' << "----------------------" << '\n' << endl;
+    cout << '\n' << "----------------------" << "\n\n" << endl;
 
-    // Use the ClassRoom Object to sort list of students by student last name
+    // Uses the ClassRoom Object to sort list of students by student last name
     classRoomObject.sortOnLastName();
 
-    // Display the list of students by student last name
-    cout << "Students by Student Last Name:" << endl;
+    // Displays the list of students by student last name
+    cout << "Students by Student Last Name:\n" << endl;
     classRoomObject.print();
-    cout << '\n' << "----------------------" << '\n' << endl;
+    cout << '\n' << "----------------------" << "\n\n" << endl;
 
-    // Use the ClassRoom Object to display the average grade of all students
+    // Uses the ClassRoom Object to display the average grade of all students
     double classAverage = classRoomObject.getClassAverage();
-    cout << "Class Average: " << classAverage << endl;
+    cout << "Class Average: " << classAverage << endl << endl;
 
-    // Use the ClassRoom Object to display the number of Student objects created
+    // Uses the ClassRoom Object to display the number of Student objects created
     int studentCount = classRoomObject.getStudentCount();
-    cout << "Student Count: " << studentCount << endl;
+    cout << "Student Count: " << studentCount << endl << endl;
 }
