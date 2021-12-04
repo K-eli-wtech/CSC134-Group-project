@@ -8,7 +8,9 @@ class Student
 public:
 	static int StudentNumber;
 	string getFirstName();
+	void setFirstName(string firstName);
 	string getLastName();
+	void setLastName(string lastName);
 	string getSocialSecurityNumber();
 	void setSocialSecurityNumber(string socialSecurityNumber);
 	double getExamGrade(int index);
@@ -22,8 +24,8 @@ public:
 	Student();
 	Student(string firstName, string lastName, string socialSecurityNumber, double firstGrade, double secondGrade, double thirdGrade, double fourthGrade);
 private:
-	const string FirstName;
-	const string LastName;
+	string FirstName;
+	string LastName;
 	string SocialSecurityNumber;
 	double ExamGrades[4];
 	double AverageExamGrade;
