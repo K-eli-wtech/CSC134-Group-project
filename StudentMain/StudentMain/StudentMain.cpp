@@ -54,6 +54,6 @@ int main()
     cout << "Class Average: " << classAverage << endl << endl;
 
     // Uses the ClassRoom Object to display the number of Student objects created
-    int studentCount = classRoomObject.getStudentCount(); 
+    int studentCount = classRoomObject.getStudentCount();
     cout << "Student Count: " << studentCount << endl << endl;
 }
