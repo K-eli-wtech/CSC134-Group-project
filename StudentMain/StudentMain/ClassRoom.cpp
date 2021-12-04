@@ -112,12 +112,14 @@ void ClassRoom::sortOnAverage()
 {
     int index;
     int smallestIndex;
+    int smallestIndexReset;
     int location;
     Student temp;
 
     for (index = 0; index < getStudentCount() - 1; index++)
     {
         smallestIndex = index;
+        smallestIndexReset = index;
         for (location = index + 1; location < getStudentCount(); location++)
         {
             if (StudentArray[location].getAverageExamGrade() < StudentArray[smallestIndex].getAverageExamGrade())
@@ -127,6 +129,7 @@ void ClassRoom::sortOnAverage()
             temp = StudentArray[smallestIndex];
             StudentArray[smallestIndex] = StudentArray[index];
             StudentArray[index] = temp;
+            smallestIndex = smallestIndexReset;
         }
     }
 }
@@ -141,12 +144,14 @@ void ClassRoom::sortOnLastName()
 {
     int index;
     int smallestIndex;
+    int smallestIndexReset;
     int location;
     Student temp;
 
     for (index = 0; index < getStudentCount() - 1; index++)
     {
         smallestIndex = index;
+        smallestIndexReset = index;
         for (location = index + 1; location < getStudentCount(); location++)
         {
             if (StudentArray[location].getLastName() < StudentArray[smallestIndex].getLastName())
@@ -156,6 +161,7 @@ void ClassRoom::sortOnLastName()
             temp = StudentArray[smallestIndex];
             StudentArray[smallestIndex] = StudentArray[index];
             StudentArray[index] = temp;
+            smallestIndex = smallestIndexReset;
         }
     }
 }
