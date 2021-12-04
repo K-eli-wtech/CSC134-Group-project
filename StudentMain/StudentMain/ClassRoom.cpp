@@ -23,7 +23,9 @@ int ClassRoom::StudentCount = 0;
 
 //////////
 //
+// Function: ClassRoom
 // 
+// Description: Default Constructor, initializes the classroom name and array of Students
 //
 //////////
 
@@ -35,7 +37,9 @@ ClassRoom::ClassRoom()		//Default Constructor for ClassRoom Objects
 
 //////////
 //
+// Function: ~ClassRoom
 // 
+// Description: Deconstructor, deletes StudentArray
 //
 //////////
 
@@ -46,7 +50,66 @@ ClassRoom::~ClassRoom()		//Destructor for ClassRoom Objects
 
 //////////
 //
+// Function: getClassAverage
 // 
+// Description: returns the total class average
+// 
+// Returns:
+//  double : the total class average
+//
+//////////
+
+double ClassRoom::getClassAverage()
+{
+    double averageSum = 0;
+    double classAverage;
+
+    for (int i = 0; i < getStudentCount(); i++)
+    {
+        averageSum = averageSum + StudentArray[i].getAverageExamGrade();
+    }
+
+    classAverage = (averageSum / getStudentCount());
+    return classAverage;
+}
+
+//////////
+//
+// Function: getStudentCount
+// 
+// Description: returns the total number of students
+// 
+// Returns:
+//  int : the total number of students
+//
+//////////
+
+int ClassRoom::getStudentCount()
+{
+    return StudentCount;
+}
+
+//////////
+//
+// Function: incrementStudentCount
+// 
+// Description: increments StudentCount
+//
+//////////
+
+void ClassRoom::incrementStudentCount()
+{
+    StudentCount++;
+}
+
+//////////
+//
+// Function: readDataFromFile
+// 
+// Description: stores the data from the file filename into Student objects in StudentArray, up to a maximum of 24 Student objects
+// 
+// Parameters:
+//  filename : string name of the file to be read
 //
 //////////
 
@@ -68,7 +131,7 @@ void ClassRoom::readDataFromFile(string filename)		//Reads file data and creates
 
             for (int x = 0; x < 7; x++) // there are total 7 items in one line
             {
-                // storing data taken from one line offile into different variables.
+                // storing data taken from one line of file into different variables.
                 switch (x)        // position of item specifies the value of specific data member
                 {
                 case 0:       // 0 index is student last name
@@ -80,16 +143,16 @@ void ClassRoom::readDataFromFile(string filename)		//Reads file data and creates
                 case 2:       // 2 index is student social security number
                     ss >> socialSec;
                     break;
-                case 3:       // 3 index if grade 1
+                case 3:       // 3 index is grade 1
                     ss >> grade1;
                     break;
-                case 4:       // 4 index if grade 2
+                case 4:       // 4 index is grade 2
                     ss >> grade2;
                     break;
-                case 5:        // 5 index if grade 3
+                case 5:        // 5 index is grade 3
                     ss >> grade3;
                     break;
-                case 6:        // 6 index if grade 4
+                case 6:        // 6 index is grade 4
                     ss >> grade4;
                     break;
                 }
@@ -104,7 +167,9 @@ void ClassRoom::readDataFromFile(string filename)		//Reads file data and creates
 
 //////////
 //
+// Function: sortOnAverage
 // 
+// Description: sorts the students in StudentArray by their average grade
 //
 //////////
 
@@ -136,7 +201,9 @@ void ClassRoom::sortOnAverage()
 
 //////////
 //
+// Function: sortOnLastName
 // 
+// Description: sorts the students in StudentArray by their last name
 //
 //////////
 
@@ -168,7 +235,9 @@ void ClassRoom::sortOnLastName()
 
 //////////
 //
+// Function: print
 // 
+// Description: prints the information about the students using the Student class print function
 //
 //////////
 
@@ -178,46 +247,4 @@ void ClassRoom::print()
     {
         StudentArray[i].print();
     }
-}
-
-//////////
-//
-// 
-//
-//////////
-
-double ClassRoom::getClassAverage()
-{
-    double averageSum = 0;
-    double classAverage;
-
-    for (int i = 0; i < getStudentCount(); i++)
-    {
-        averageSum = averageSum + StudentArray[i].getAverageExamGrade();
-    }
-
-    classAverage = (averageSum / getStudentCount());
-    return classAverage;
-}
-
-//////////
-//
-// 
-//
-//////////
-
-int ClassRoom::getStudentCount()
-{
-    return StudentCount;
-}
-
-//////////
-//
-// 
-//
-//////////
-
-void ClassRoom::incrementStudentCount()
-{
-    StudentCount++;
 }
