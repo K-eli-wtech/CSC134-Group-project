@@ -66,7 +66,6 @@ void ClassRoom::readDataFromFile(string filename)		//Reads file data and creates
                 }
             }
             Student studentObj(firstName, lastName, socialSec, grade1, grade2, grade3, grade4);
-            studentObj.setAverageExamGrade(studentObj.calculateAverageExamGrade());
             studentArray[numStudents] = studentObj;
             numStudents++;
 		}
@@ -79,25 +78,73 @@ void ClassRoom::sortOnAverage()
     int index;
     int smallestIndex;
     int location;
-    int temp;
+    Student temp;
 
-    for (index = 0; index <= numStudents; index++)
+    for (index = 0; index < numStudents - 1; index++)
     {
         smallestIndex = index;
-        for (location = index + 1; location <= numStudents; location++)
+        for (location = index + 1; location < numStudents; location++)
         {
             if (studentArray[location].getAverageExamGrade() < studentArray[smallestIndex].getAverageExamGrade())
             {
                 smallestIndex = location;
             }
+            temp = studentArray[smallestIndex];
+            studentArray[smallestIndex] = studentArray[index];
+            studentArray[index] = temp;
         }
-        temp = studentArray[smallestIndex].getAverageExamGrade();
-        studentArray[smallestIndex].setAverageExamGrade(studentArray[index].getAverageExamGrade());
-        studentArray[index].setAverageExamGrade(temp);
     }
+}
 
+//Unsure if this should be alphabetical or just comparing the strings. The assignment doc leads me to believe it should
+//be comparing the values of the last names but if you want me to change it to sorting alphabetically let me know.
+//You can remove this comment before submission.
+void ClassRoom::sortOnLastName()
+{
+    int index;
+    int smallestIndex;
+    int location;
+    Student temp;
+
+    for (index = 0; index < numStudents - 1; index++)
+    {
+        smallestIndex = index;
+        for (location = index + 1; location < numStudents; location++)
+        {
+            if (studentArray[location].getLastName() < studentArray[smallestIndex].getLastName())
+            {
+                smallestIndex = location;
+            }
+            temp = studentArray[smallestIndex];
+            studentArray[smallestIndex] = studentArray[index];
+            studentArray[index] = temp;
+        }
+    }
+}
+
+void ClassRoom::print()
+{
     for (int i = 0; i < numStudents; i++)
     {
         studentArray[i].print();
     }
+}
+
+double ClassRoom::getClassAverage()
+{
+    double averageSum = 0;
+    double classAverage;
+
+    for (int i = 0; i < numStudents; i++)
+    {
+        averageSum = averageSum + studentArray[i].getAverageExamGrade();
+    }
+
+    classAverage = (averageSum / numStudents);
+    return classAverage;
+}
+
+int ClassRoom::getStudentCount()
+{
+    return numStudents;
 }
