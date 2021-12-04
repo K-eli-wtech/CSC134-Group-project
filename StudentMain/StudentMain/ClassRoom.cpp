@@ -29,7 +29,7 @@ int ClassRoom::StudentCount = 0;
 //
 //////////
 
-ClassRoom::ClassRoom()		//Default Constructor for ClassRoom Objects
+ClassRoom::ClassRoom()	
 {
 	Name = "CSC-134";
 	StudentArray = new Student[24];
@@ -39,11 +39,11 @@ ClassRoom::ClassRoom()		//Default Constructor for ClassRoom Objects
 //
 // Function: ~ClassRoom
 // 
-// Description: Deconstructor, deletes StudentArray
+// Description: Destructor, deletes StudentArray
 //
 //////////
 
-ClassRoom::~ClassRoom()		//Destructor for ClassRoom Objects
+ClassRoom::~ClassRoom()		
 {
 	delete[] StudentArray;
 }
@@ -113,7 +113,7 @@ void ClassRoom::incrementStudentCount()
 //
 //////////
 
-void ClassRoom::readDataFromFile(string filename)		//Reads file data and creates student objects
+void ClassRoom::readDataFromFile(string filename)
 {
 	ifstream studentData;
 	string currentLine, firstName, lastName, socialSec;
