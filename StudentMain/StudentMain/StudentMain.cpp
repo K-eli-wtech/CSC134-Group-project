@@ -18,15 +18,17 @@ int main()
     classRoomObject.sortOnAverage();
 
     // Display the list of students by student average
-    cout << "Students by Student Average" << endl;
+    cout << "Students by Student Average:" << endl;
     classRoomObject.print();
+    cout << '\n' << "----------------------" << '\n' << endl;
 
     // Use the ClassRoom Object to sort list of students by student last name
     classRoomObject.sortOnLastName();
 
     // Display the list of students by student last name
-    cout << "Students by Student Last Name" << endl;
+    cout << "Students by Student Last Name:" << endl;
     classRoomObject.print();
+    cout << '\n' << "----------------------" << '\n' << endl;
 
     // Use the ClassRoom Object to display the average grade of all students
     double classAverage = classRoomObject.getClassAverage();
