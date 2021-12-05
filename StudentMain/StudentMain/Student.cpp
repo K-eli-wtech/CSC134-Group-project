@@ -3,7 +3,7 @@
 //
 // Filename: Student.cpp
 // Date: December 4, 2021
-// Programmers: Caleb Tutor, Jacob Yates
+// Programmers: Caleb Tutor, Jacob Yates, Kaleb White
 // 
 // Description: implementation for the Student class
 //
