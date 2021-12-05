@@ -3,7 +3,7 @@
 //
 // Filename: ClassRoom.cpp
 // Date: December 4, 2021
-// Programmers: Jacob Yates, Caleb Tutor
+// Programmers: Jacob Yates, Caleb Tutor, Kaleb White
 // 
 // Description: implementation for the ClassRoom class
 //
